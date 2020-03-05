@@ -14,10 +14,18 @@ function login() {
       if (student && student.login.password === password) {
         location.href = "kursinfo.html";
       } else {
-        alert("Felaktig inloggning"); // skicka meddelande vid felaktigt lösenord
+       
+        if(!student){
+          alert("Felaktig användarnamn");    
+        }
+        else{
+          alert("Felaktig lösenord");
+        }
+
       }
     }
   );
 
   return false;
 }
+
